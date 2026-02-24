@@ -19,23 +19,29 @@ public class FirstPersonCharacterController : MonoBehaviour
     public float WalkSpeed = 5F;
     public float SprintMultiplier = 2F;
     public float CrouchMultiplier = .7F;
+    private PlayerInput playerInput;
+    private InputAction move;
+    public float Gravity = -9.8F;
+    private Vector3 velocity;
+    private CharacterController characterController;
+
+    [Header("Jump")]
     public float JumpForce = 5F;
     public float GroundCheckDistance = 1.5F;
+    private bool jumped = false;
+
+    [Header("Camera")]
     public float LookSensitivityX = 1F;
     public float LookSensitivityY = 1F;
     public float MinYLookAngle = -90F;
     public float MaxYLookAngle = 90F;
     public Transform PlayerCamera;
-    public float Gravity = -9.8F;
-    private Vector3 velocity;
     private float verticalRotation = 0;
-    private CharacterController characterController;
-    private bool jumped = false;
-    private PlayerInput playerInput;
-    private InputAction move;
 
-    private InputAction sprint;
+    
+    [Header("Stamina")]
     public Slider StaminaSlider;
+    private InputAction sprint;
     public float MaxStamina = 100F;
     public float Stamina = 100F;
     public float StaminaDrain = 10F;
