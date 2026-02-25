@@ -8,6 +8,9 @@ public class PlayerSpellController : MonoBehaviour
 
     private SpellAbstract[] spells = new SpellAbstract[0];
 
+    public GameObject RightHand;
+    public GameObject LeftHand;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
