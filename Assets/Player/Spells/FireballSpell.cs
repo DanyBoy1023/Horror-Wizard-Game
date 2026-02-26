@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BasicSpellAttack : MonoBehaviour
+public class FireballSpell : MonoBehaviour
 {
     public GameObject BulletPrefab;
     private PlayerInput playerInput;
@@ -15,7 +15,7 @@ public class BasicSpellAttack : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        BasicAttack = playerInput.actions.FindAction("Attack");
+        BasicAttack = playerInput.actions.FindAction("Spell1");
         spellController = GetComponent<PlayerSpellController>();
     }
 
@@ -24,7 +24,7 @@ public class BasicSpellAttack : MonoBehaviour
     {
         float delta = Time.deltaTime;
         bool attacking = BasicAttack.ReadValue<float>() == 1f;
-        
+
         if (attacking)
         {
             if (delayCounter <= 0)

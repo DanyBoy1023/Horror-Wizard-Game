@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 8240026289099586772}
   - component: {fileID: 2894583325425237270}
   - component: {fileID: 7306221459938944593}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Left Hand
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
@@ -282,11 +282,12 @@ GameObject:
   - component: {fileID: 4400480432914447023}
   - component: {fileID: 2415074579867096591}
   - component: {fileID: 8496539824670224190}
+  - component: {fileID: 7376964813585650294}
   - component: {fileID: 6269375651024546557}
   - component: {fileID: 2577316268385263780}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,6 +358,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpellController
   RightHand: {fileID: 6419453526005941289}
   LeftHand: {fileID: 1636038578287585811}
+--- !u!114 &7376964813585650294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5584204459957703739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c1899a8aee7014fac01c363aa8cde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicSpellAttack
+  BulletPrefab: {fileID: 4777937755903097559, guid: 5a4456b3b1bbc9b4a9ddfd3d53c657f2, type: 3}
+  ShotDelay: 0.1
+  BulletSpeed: 10
 --- !u!143 &6269375651024546557
 CharacterController:
   m_ObjectHideFlags: 0
@@ -514,7 +530,7 @@ GameObject:
   - component: {fileID: 8105628539740453311}
   - component: {fileID: 5391942293067027533}
   - component: {fileID: 3751682401969472248}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Right Hand
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
@@ -669,7 +685,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
