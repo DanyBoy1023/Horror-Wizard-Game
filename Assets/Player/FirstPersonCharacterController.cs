@@ -18,7 +18,6 @@ public class FirstPersonCharacterController : MonoBehaviour
     [Header("Movement")]
     public float WalkSpeed = 5F;
     public float SprintMultiplier = 2F;
-    public float CrouchMultiplier = .7F;
     private PlayerInput playerInput;
     private InputAction move;
     public float Gravity = -9.8F;
