@@ -6,9 +6,10 @@ public class FireballSpell : MonoBehaviour
     public GameObject BulletPrefab;
     private PlayerInput playerInput;
     private InputAction BasicAttack;
-    public float ShotDelay = .1F;
-    private float delayCounter = 0;
     private PlayerSpellController spellController;
+    public float Cooldown = 5;
+    public float cooldownCounter;
+    public float blastRadius = 10;
     public float BulletSpeed = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,14 +28,9 @@ public class FireballSpell : MonoBehaviour
 
         if (attacking)
         {
-            if (delayCounter <= 0)
+            if (cooldownCounter >= Cooldown)
             {
                 shoot();
-                delayCounter += ShotDelay;
-            }
-            else
-            {
-                delayCounter -= delta;
             }
         }
     }
