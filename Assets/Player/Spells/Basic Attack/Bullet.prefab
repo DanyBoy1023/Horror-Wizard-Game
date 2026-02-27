@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellHitDetection
   Damage: 2
-  status: 1
+  status: 0
 --- !u!114 &5297791413613479454
 MonoBehaviour:
   m_ObjectHideFlags: 0
