@@ -88,7 +88,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Spell 1",
+                    "name": "Fireball",
                     "type": "Button",
                     "id": "e7d66249-0a9a-49b4-aff3-efec27e917bf",
                     "expectedControlType": "",
@@ -508,7 +508,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Spell 1",
+                    "action": "Fireball",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

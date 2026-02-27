@@ -16,7 +16,7 @@ public class FireballSpell : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        BasicAttack = playerInput.actions.FindAction("Spell1");
+        BasicAttack = playerInput.actions.FindAction("Fireball");
         spellController = GetComponent<PlayerSpellController>();
     }
 
