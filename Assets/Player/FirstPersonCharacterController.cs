@@ -39,7 +39,6 @@ public class FirstPersonCharacterController : MonoBehaviour
 
     
     [Header("Stamina")]
-    public Slider StaminaSlider;
     private InputAction sprint;
     public float MaxStamina = 100F;
     public float Stamina = 100F;
@@ -50,7 +49,6 @@ public class FirstPersonCharacterController : MonoBehaviour
     public float FatigueThreshold = 30F;
 
     [Header("Health")]
-    public Slider HpSlider;
     public float maxHp = 100;
     public float hp;
     public Text GameOverText;
@@ -80,7 +78,6 @@ public class FirstPersonCharacterController : MonoBehaviour
                 GameOverText.enabled = true;
             }
         }
-        HpSlider.value = hp / maxHp;
     }
 
 
@@ -99,7 +96,6 @@ public class FirstPersonCharacterController : MonoBehaviour
         {
             return;
         }
-        StaminaSlider.value = Stamina / MaxStamina;
 
         #region Horizontal movement
         Vector2 value = move.ReadValue<Vector2>();

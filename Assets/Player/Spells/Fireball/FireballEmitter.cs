@@ -9,12 +9,14 @@ public class FireballEmitter : MonoBehaviour
     private PlayerSpellController spellController;
     public float Cooldown = 5;
     public float cooldownCounter;
+    public bool onCooldown = false;
     public float blastRadius = 10;
     public float BulletSpeed = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        cooldownCounter = Cooldown;
         playerInput = GetComponent<PlayerInput>();
         BasicAttack = playerInput.actions.FindAction("Fireball");
         spellController = GetComponent<PlayerSpellController>();
@@ -28,30 +30,40 @@ public class FireballEmitter : MonoBehaviour
 
         if (attacking)
         {
-            if (cooldownCounter >= Cooldown)
+            if (!onCooldown)
             {
                 shoot();
+                cooldownCounter = 0;
             }
+        }
+
+        if (cooldownCounter >= Cooldown)
+        {
+            onCooldown = false;
+        }
+        else
+        {
+            onCooldown = true;
+            cooldownCounter += Time.deltaTime;
         }
     }
 
     private void shoot()
     {
         GameObject bullet = Instantiate(BulletPrefab);
-        GameObject rightHand = spellController.RightHand;
+        GameObject leftHand = spellController.LeftHand;
 
-        bullet.transform.position = rightHand.transform.position;
-        bullet.transform.rotation = rightHand.transform.rotation;
+        bullet.transform.position = leftHand.transform.position;
+        bullet.transform.rotation = leftHand.transform.rotation;
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = bullet.transform.forward.normalized * BulletSpeed;
     }
 
-    public void OnFireball(InputValue value)
-    {
-        Debug.Log(value.ToString());
-        if (value.isPressed)
-        {
-            
-        }
-    }
+    //public void OnFireball(InputValue value)
+    //{
+    //    if (value.isPressed)
+    //    {
+    //        shoot();
+    //    }
+    //}
 }
