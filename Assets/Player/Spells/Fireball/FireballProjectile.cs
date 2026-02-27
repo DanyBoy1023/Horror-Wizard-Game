@@ -4,6 +4,9 @@ public class FireballProjectile : MonoBehaviour
 {
     public GameObject FireballExplosionPrefab;
     public float damage;
+    public float screenshakeDuration = .2f;
+    public float screenshakeAmount = 5;
+    public float screenshakeDiminish = .2f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,5 +30,8 @@ public class FireballProjectile : MonoBehaviour
         FireballExplosion.transform.position = transform.position;
 
         Destroy(gameObject);
+        GameObject player = GameObject.FindWithTag("Player");
+        FirstPersonCharacterController fpsController = player.GetComponent<FirstPersonCharacterController>();
+        fpsController.PlayerCamera.gameObject.GetComponent<CameraShake>().shakecamera(screenshakeDuration, screenshakeAmount, screenshakeDiminish);
     }
 }

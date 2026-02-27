@@ -51,6 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FireballProjectile
   FireballExplosionPrefab: {fileID: 8092821227476276444, guid: e08c63d8607d6134faae2663f6d88e59, type: 3}
   damage: 0
+  screenshakeDuration: 0.2
+  screenshakeAmount: 5
+  screenshakeDiminish: 10
 --- !u!114 &5141322572316142268
 MonoBehaviour:
   m_ObjectHideFlags: 0

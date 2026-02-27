@@ -241,7 +241,6 @@ MonoBehaviour:
   MinYLookAngle: -90
   MaxYLookAngle: 90
   PlayerCamera: {fileID: 4385751111009690393}
-  StaminaSlider: {fileID: 0}
   MaxStamina: 100
   Stamina: 100
   StaminaDrain: 10
@@ -249,7 +248,6 @@ MonoBehaviour:
   FillDelay: 2
   Fatigued: 0
   FatigueThreshold: 30
-  HpSlider: {fileID: 0}
   maxHp: 100
   hp: 0
   GameOverText: {fileID: 0}
@@ -297,6 +295,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 9006971628355941941, guid: 3eeca49870d87b047bde8756c2445fbd, type: 3}
   Cooldown: 5
   cooldownCounter: 0
+  onCooldown: 0
   blastRadius: 10
   BulletSpeed: 5
 --- !u!143 &6269375651024546557
@@ -544,6 +543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4385751111009690393}
+  - component: {fileID: 9116914008218408753}
   - component: {fileID: 9051246312592721669}
   - component: {fileID: 155209905050245344}
   - component: {fileID: 451168691794685738}
@@ -571,6 +571,24 @@ Transform:
   - {fileID: 8240026289099586772}
   m_Father: {fileID: 4400480432914447023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9116914008218408753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8607470433385756176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df76ce3c003a15946abc4e68464d8caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
+  shaketrue: 0
+  camTransform: {fileID: 4385751111009690393}
+  shakeDuration: 0
+  shakeAmount: 0
+  decreaseFactor: 1
+  shakeDiminish: 0.3
 --- !u!20 &9051246312592721669
 Camera:
   m_ObjectHideFlags: 0
@@ -610,7 +628,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
