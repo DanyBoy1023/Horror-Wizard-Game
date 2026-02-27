@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 2415074579867096591}
   - component: {fileID: 8496539824670224190}
   - component: {fileID: 7376964813585650294}
+  - component: {fileID: 441176559083648623}
   - component: {fileID: 6269375651024546557}
   - component: {fileID: 2577316268385263780}
   m_Layer: 7
@@ -281,6 +282,23 @@ MonoBehaviour:
   BulletPrefab: {fileID: 4777937755903097559, guid: 5a4456b3b1bbc9b4a9ddfd3d53c657f2, type: 3}
   ShotDelay: 0.1
   BulletSpeed: 20
+--- !u!114 &441176559083648623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5584204459957703739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fd199dbde9e664bbe817e375604d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireballSpell
+  BulletPrefab: {fileID: 9006971628355941941, guid: 3eeca49870d87b047bde8756c2445fbd, type: 3}
+  Cooldown: 5
+  cooldownCounter: 0
+  blastRadius: 10
+  BulletSpeed: 5
 --- !u!143 &6269375651024546557
 CharacterController:
   m_ObjectHideFlags: 0

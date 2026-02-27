@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class FireballSpell : MonoBehaviour
+public class FireballEmitter : MonoBehaviour
 {
     public GameObject BulletPrefab;
     private PlayerInput playerInput;
@@ -44,5 +44,14 @@ public class FireballSpell : MonoBehaviour
         bullet.transform.rotation = rightHand.transform.rotation;
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = bullet.transform.forward.normalized * BulletSpeed;
+    }
+
+    public void OnFireball(InputValue value)
+    {
+        Debug.Log(value.ToString());
+        if (value.isPressed)
+        {
+            
+        }
     }
 }
