@@ -48,6 +48,7 @@ public class FireballEmitter : MonoBehaviour
         }
     }
 
+    public LayerMask layerMask;
     private void shoot()
     {
         GameObject bullet = Instantiate(BulletPrefab);
@@ -55,15 +56,18 @@ public class FireballEmitter : MonoBehaviour
 
         bullet.transform.position = leftHand.transform.position;
         bullet.transform.rotation = leftHand.transform.rotation;
+
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
+
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        FirstPersonCharacterController controller = GetComponent<FirstPersonCharacterController>();
+        Transform playerCamera = controller.PlayerCamera;
+        if (Physics.Raycast(playerCamera.position, playerCamera.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+        {
+            bullet.transform.LookAt(hit.point);
+        }
+
         rb.linearVelocity = bullet.transform.forward.normalized * BulletSpeed;
     }
-
-    //public void OnFireball(InputValue value)
-    //{
-    //    if (value.isPressed)
-    //    {
-    //        shoot();
-    //    }
-    //}
 }

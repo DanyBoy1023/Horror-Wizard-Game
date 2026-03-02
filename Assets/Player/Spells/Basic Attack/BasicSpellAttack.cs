@@ -39,6 +39,7 @@ public class BasicSpellAttack : MonoBehaviour
         }
     }
 
+    public LayerMask layerMask;
     private void shoot()
     {
         GameObject bullet = Instantiate(BulletPrefab);
@@ -46,6 +47,16 @@ public class BasicSpellAttack : MonoBehaviour
 
         bullet.transform.position = rightHand.transform.position;
         bullet.transform.rotation = rightHand.transform.rotation;
+        
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        FirstPersonCharacterController controller = GetComponent<FirstPersonCharacterController>();
+        Transform playerCamera = controller.PlayerCamera;
+        if (Physics.Raycast(playerCamera.position,  playerCamera.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+        {
+            bullet.transform.LookAt(hit.point);
+        }
+
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = bullet.transform.forward.normalized * BulletSpeed;
     }
