@@ -279,7 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasicSpellAttack
   BulletPrefab: {fileID: 4777937755903097559, guid: 5a4456b3b1bbc9b4a9ddfd3d53c657f2, type: 3}
   ShotDelay: 0.1
-  BulletSpeed: 20
+  BulletSpeed: 40
 --- !u!114 &441176559083648623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ MonoBehaviour:
   cooldownCounter: 0
   onCooldown: 0
   blastRadius: 10
-  BulletSpeed: 5
+  BulletSpeed: 100
 --- !u!143 &6269375651024546557
 CharacterController:
   m_ObjectHideFlags: 0
