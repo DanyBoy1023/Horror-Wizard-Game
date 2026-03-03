@@ -36,7 +36,7 @@ public class EyeballMonsterAttack : MonoBehaviour
 
         bullet.transform.position = ShootingPoint.position;
 
-        bullet.transform.LookAt(player.transform);
+        bullet.transform.LookAt(player.GetComponent<FirstPersonCharacterController>().PlayerCamera);
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = bullet.transform.forward.normalized * BulletSpeed;
