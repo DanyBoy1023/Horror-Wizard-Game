@@ -34,8 +34,4 @@ public class FireballExplosion : SpellHitDetection
             hitTrigger.Hit(Damage, status);
         }
     }
-    public new void OnCollisionEnter(Collision collision)
-    {
-        // do nothing
-    }
 }

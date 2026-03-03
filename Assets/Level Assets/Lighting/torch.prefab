@@ -298,8 +298,30 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 254644eb741a7c6469ee04939c113907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8176922096297835306}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 254644eb741a7c6469ee04939c113907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1108517509565062789}
   m_SourcePrefab: {fileID: 100100000, guid: 254644eb741a7c6469ee04939c113907, type: 3}
+--- !u!1 &6999815835785249270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 254644eb741a7c6469ee04939c113907, type: 3}
+  m_PrefabInstance: {fileID: 7918804494378302631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1108517509565062789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999815835785249270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a8e3355b43f4a41a17a3bfbe0be75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TorchLightUpScript
+  torch_light: {fileID: 8505939833622619437}
+  on: 1
 --- !u!4 &7669497975371078476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 254644eb741a7c6469ee04939c113907, type: 3}
