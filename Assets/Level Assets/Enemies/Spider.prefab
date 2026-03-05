@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicEnemyMovementController
   State: 0
-  MoveSpeed: 1
+  MoveSpeed: 5
   WanderingDelay: 2
   WanderingDistance: 5
   VisibilityDistance: 30

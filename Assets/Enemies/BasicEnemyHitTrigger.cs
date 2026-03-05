@@ -37,6 +37,8 @@ public class BasicEnemyHitTrigger : HitTrigger
             Die();
         }
         UpdateHealthBar();
+        GetComponent<BasicEnemyMovementController>().State = BasicEnemyMovementController.EnemyStates.Chasing;
+
     }
 
     public void Die()
