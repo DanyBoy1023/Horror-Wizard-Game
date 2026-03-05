@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3654600988161033511}
   - component: {fileID: 1627439320758823160}
-  - component: {fileID: 283637779814074921}
+  - component: {fileID: 8010092108706985380}
   - component: {fileID: 1879564860540586993}
   - component: {fileID: 7963646020497205788}
   - component: {fileID: 3952255961765928107}
@@ -143,10 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6597817a8cc392f4d9f0d149b09b2e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicEnemyHitTrigger
-  MaxHp: 4
+  MaxHp: 20
   hp: 0
   hpSlider: {fileID: 6869650750141439123}
---- !u!114 &283637779814074921
+--- !u!114 &8010092108706985380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,10 +155,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3656773723729059946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c98d57f865676743be8fbbc71fce742, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ceab99e0a739524cb46503119fa7397, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovementController
+  m_EditorClassIdentifier: Assembly-CSharp::BasicEnemyMovementController
+  State: 0
   MoveSpeed: 1
+  WanderingDelay: 4
+  WanderingDistance: 5
+  VisibilityDistance: 10
+  NavigationUpdateDelay: 3
 --- !u!114 &1879564860540586993
 MonoBehaviour:
   m_ObjectHideFlags: 0

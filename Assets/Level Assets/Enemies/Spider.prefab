@@ -187,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2756402334427425929}
   - component: {fileID: 7911302661602933076}
-  - component: {fileID: 8410530400260206636}
+  - component: {fileID: 1382252066405535837}
   - component: {fileID: 2985624551109224085}
   - component: {fileID: 4947031525557635358}
   - component: {fileID: 1492620715882987247}
@@ -229,7 +229,7 @@ MonoBehaviour:
   MaxHp: 10
   hp: 0
   hpSlider: {fileID: 7056016397631633995}
---- !u!114 &8410530400260206636
+--- !u!114 &1382252066405535837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,10 +238,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5314997157253859925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c98d57f865676743be8fbbc71fce742, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ceab99e0a739524cb46503119fa7397, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovementController
+  m_EditorClassIdentifier: Assembly-CSharp::BasicEnemyMovementController
+  State: 0
   MoveSpeed: 1
+  WanderingDelay: 2
+  WanderingDistance: 5
+  NavigationUpdateDelay: 3
 --- !u!23 &2985624551109224085
 MeshRenderer:
   m_ObjectHideFlags: 0
