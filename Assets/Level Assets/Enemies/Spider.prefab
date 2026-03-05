@@ -245,6 +245,7 @@ MonoBehaviour:
   MoveSpeed: 1
   WanderingDelay: 2
   WanderingDistance: 5
+  VisibilityDistance: 30
   NavigationUpdateDelay: 3
 --- !u!23 &2985624551109224085
 MeshRenderer:

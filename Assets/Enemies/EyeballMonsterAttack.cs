@@ -10,25 +10,31 @@ public class EyeballMonsterAttack : MonoBehaviour
     public float ShotDelay = 10;
     private float ShotCounter = 0;
     private GameObject player;
+    private BasicEnemyMovementController Controller;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        Controller = GetComponent<BasicEnemyMovementController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ShotCounter >= ShotDelay)
+        if (Controller.State == BasicEnemyMovementController.EnemyStates.Chasing)
         {
-            Shoot();
-            ShotCounter = 0;
+            if (ShotCounter >= ShotDelay)
+            {
+                Shoot();
+                ShotCounter = 0;
+            }
+            else
+            {
+                ShotCounter += Time.deltaTime;
+            }
         }
-        else
-        {
-            ShotCounter += Time.deltaTime;
-        }
+        
     }
 
     public void Shoot()

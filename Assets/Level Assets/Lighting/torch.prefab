@@ -44,7 +44,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 40068
+  m_Intensity: 2.8861692
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -95,7 +95,7 @@ Light:
   m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-  m_LightUnit: 2
+  m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
 --- !u!114 &8370041413686587221
@@ -288,6 +288,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2559693329666666881, guid: 254644eb741a7c6469ee04939c113907, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7dca16b1d19d02346ba2d5e9fb8f2123, type: 2}
+    - target: {fileID: -1342566976901234874, guid: 254644eb741a7c6469ee04939c113907, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7dca16b1d19d02346ba2d5e9fb8f2123, type: 2}
     - target: {fileID: 919132149155446097, guid: 254644eb741a7c6469ee04939c113907, type: 3}
       propertyPath: m_Name
       value: torch
@@ -302,6 +310,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 254644eb741a7c6469ee04939c113907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1108517509565062789}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 254644eb741a7c6469ee04939c113907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6055428715371377574}
   m_SourcePrefab: {fileID: 100100000, guid: 254644eb741a7c6469ee04939c113907, type: 3}
 --- !u!1 &6999815835785249270 stripped
 GameObject:
@@ -322,6 +333,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TorchLightUpScript
   torch_light: {fileID: 8505939833622619437}
   on: 0
+--- !u!135 &6055428715371377574
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999815835785249270}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.19439065
+  m_Center: {x: 0, y: 0.3, z: 0.30560935}
 --- !u!4 &7669497975371078476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 254644eb741a7c6469ee04939c113907, type: 3}

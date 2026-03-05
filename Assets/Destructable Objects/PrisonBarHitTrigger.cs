@@ -6,11 +6,17 @@ public class PrisonBarHitTrigger : HitTrigger
     public float MaxHp = 10;
     public float hp;
     public Slider hpSlider;
+    public GameObject HpBar;
 
     private void Start()
     {
         UpdateHealthBar();
         hp = MaxHp;
+    }
+
+    private void Update()
+    {
+        HpBar.transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
     }
 
     public override void Hit(float damage, SpellHitDetection.StatusTypes statusEffect)
