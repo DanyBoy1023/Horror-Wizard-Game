@@ -6,6 +6,7 @@ public class EyeballMonsterAttack : MonoBehaviour
     public Transform ShootingPoint;
     public GameObject BulletPrefab;
     public float BulletSpeed = 5;
+    public float Damage = 10;
     public float ShotDelay = 10;
     private float ShotCounter = 0;
     private GameObject player;
@@ -40,5 +41,8 @@ public class EyeballMonsterAttack : MonoBehaviour
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = bullet.transform.forward.normalized * BulletSpeed;
+
+        EyeballMonsterBulletController bulletController = bullet.GetComponent<EyeballMonsterBulletController>();
+        bulletController.Damage = Damage;
     }
 }

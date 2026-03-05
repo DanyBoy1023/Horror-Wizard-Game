@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2809871449965862475}
+  - component: {fileID: -4759965328259593778}
+  - component: {fileID: -6697021397012096424}
   - component: {fileID: 2001499069932506968}
   - component: {fileID: 129794376847736052}
   - component: {fileID: 798489592290725236}
@@ -35,6 +37,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4759965328259593778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919455688366124140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9bce9cbe56cfc42a7f0917b8c07846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EyeballMonsterBulletController
+  Damage: 10
+--- !u!114 &-6697021397012096424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919455688366124140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe9d39fbc142ac42b2b6bde7d440695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathTimer
+  Duration: 6
+  counter: 0
 --- !u!33 &2001499069932506968
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -105,7 +134,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2147483904
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -132,7 +161,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2147483904
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
