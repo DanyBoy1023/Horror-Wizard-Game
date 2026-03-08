@@ -3,32 +3,21 @@ using UnityEngine;
 public class TorchLightUpScript : HitTrigger
 {
     public Light torch_light;
-    public bool on = true;
 
-    private void Start()
-    {
-        UpdateLight();
-    }
-
-    private void Update()
-    {
-        UpdateLight();
-    }
 
     public override void Hit(float damage, SpellHitDetection.StatusTypes statusEffect)
     {
         if (statusEffect == SpellHitDetection.StatusTypes.Fire)
         {
-            on = true;
-            UpdateLight();
+            TurnOnLight();
         }
     }
 
-    public void UpdateLight()
+    public void TurnOnLight()
     {
-        if (torch_light != null)
+        if (torch_light != null && !torch_light.enabled)
         {
-            torch_light.enabled = on;
+            torch_light.enabled = true;
         }
     }
 }
