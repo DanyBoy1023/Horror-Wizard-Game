@@ -53,6 +53,9 @@ public class FirstPersonCharacterController : MonoBehaviour
     public float hp;
     public Text GameOverText;
 
+    public bool Poisoned;
+    public float PoisonDrain;
+
     private void Start()
     {
         hp = maxHp;
