@@ -514,6 +514,17 @@
                 },
                 {
                     "name": "",
+                    "id": "dbf682e1-aa8e-49fb-b35d-d082edd97322",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fireball",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "71a3cb25-fa16-400b-ae18-b2cf73ec1830",
                     "path": "<Keyboard>/2",
                     "interactions": "",

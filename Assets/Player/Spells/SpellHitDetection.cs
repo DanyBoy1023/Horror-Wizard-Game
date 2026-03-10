@@ -6,9 +6,7 @@ public class SpellHitDetection : MonoBehaviour
     {
         None,
         Fire,
-        Ice,
-        Electric,
-        Dark
+        Poison
     }
     public float Damage = 2;
     public StatusTypes status = StatusTypes.None;

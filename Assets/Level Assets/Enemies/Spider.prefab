@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 2756402334427425929}
   - component: {fileID: 7911302661602933076}
   - component: {fileID: 1382252066405535837}
+  - component: {fileID: 260932522465056834}
   - component: {fileID: 2985624551109224085}
   - component: {fileID: 4947031525557635358}
   - component: {fileID: 1492620715882987247}
@@ -247,6 +248,21 @@ MonoBehaviour:
   WanderingDistance: 5
   VisibilityDistance: 30
   NavigationUpdateDelay: 3
+--- !u!114 &260932522465056834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314997157253859925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ae80ad4101e5c42b94e31c24313828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpiderAttackController
+  AttackDelay: 5
+  AttackRange: 4
+  AttackSpeed: 0
 --- !u!23 &2985624551109224085
 MeshRenderer:
   m_ObjectHideFlags: 0

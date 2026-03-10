@@ -1,8 +1,9 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections.Generic;
+
+using DG.Tweening;
 
 public class FirstPersonCharacterController : MonoBehaviour
 {
@@ -52,10 +53,20 @@ public class FirstPersonCharacterController : MonoBehaviour
     public float maxHp = 100;
     public float hp;
     public Text GameOverText;
+    public float InvicibilityFrames = 10;
+    public float InvincibilityCounter = 0;
+
+    public Image HitOverlay;
+    public Image PoisonOverlay;
+    public Sequence HitSequence;
 
     public bool Poisoned;
-    public float PoisonDrain;
-
+    public float PoisonDamage = 2;
+    public float PoisonDuration = 5;
+    private float PoisonCounter = 0;
+    public float PoisonTickDuration = 1;
+    private float PoisonTickCounter = 0;
+    
     private void Start()
     {
         hp = maxHp;
@@ -69,7 +80,7 @@ public class FirstPersonCharacterController : MonoBehaviour
         PlayerCamera.transform.rotation = new Quaternion(0,0,0,0);
     }
 
-    public void damage(float value)
+    public void damage(float value, bool poison = false)
     {
         hp -= value;
         hp = Mathf.Clamp(hp, 0, maxHp);
@@ -81,6 +92,32 @@ public class FirstPersonCharacterController : MonoBehaviour
                 GameOverText.enabled = true;
             }
         }
+        if (!poison)
+        {
+            HitSequence = DOTween.Sequence();
+            HitSequence.Append(DOTween.To(() => HitOverlay.color.a, x => SetImageAlpha(HitOverlay, x), .5f, .1f));
+            HitSequence.Append(DOTween.To(() => HitOverlay.color.a, x => SetImageAlpha(HitOverlay, x), 0, .2f));
+        }
+    }
+
+    public void poison()
+    {
+        // Reset poisoned counters
+        if (!Poisoned)
+        {
+            Poisoned = true;
+            PoisonTickCounter = 0;
+        }
+        PoisonCounter = 0;
+
+        DOTween.To(() => PoisonOverlay.color.a, x => SetImageAlpha(PoisonOverlay, x), .1f, .1f);
+    }
+    
+    private void SetImageAlpha(Image image, float alpha)
+    {
+        Color tempColor = image.color;
+        tempColor.a = alpha;
+        image.color = tempColor;
     }
 
 
@@ -98,6 +135,45 @@ public class FirstPersonCharacterController : MonoBehaviour
         if (getCurrentState() == states.dead)
         {
             return;
+        }
+
+        if (Poisoned)
+        {
+
+            // Full Poison duration
+            if (PoisonCounter >= PoisonDuration)
+            {
+                // The player loses poison
+                Poisoned = false;
+            }
+            else
+            {
+                PoisonCounter += Time.deltaTime;
+            }
+
+            // Poison damage tick
+            if (PoisonTickCounter >= PoisonTickDuration)
+            {
+                // Deal poison damage
+                Sequence PoisonHitSequence = DOTween.Sequence();
+                PoisonHitSequence.Append(DOTween.To(() => PoisonOverlay.color.a, x => SetImageAlpha(PoisonOverlay, x), .5f, .1f));
+                PoisonHitSequence.Append(DOTween.To(() => PoisonOverlay.color.a, x => SetImageAlpha(PoisonOverlay, x), .1f, .2f));
+
+                PoisonTickCounter %= PoisonTickDuration;
+
+                damage(PoisonDamage, true);
+            }
+            else
+            {
+                PoisonTickCounter += Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (PoisonOverlay.color.a > 0)
+            {
+                DOTween.To(() => PoisonOverlay.color.a, x => SetImageAlpha(PoisonOverlay, x), 0, .1f);
+            }
         }
 
         #region Horizontal movement
