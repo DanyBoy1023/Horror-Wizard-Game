@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class SpiderAttackController : MonoBehaviour
 {
-    public float AttackDelay = 5;
+    public Animator anim;
+    public float AttackDelay = .5f;
     private float AttackDelayCounter = 0;
     public float AttackRange = 4;
     public float AttackSpeed;
@@ -20,6 +21,7 @@ public class SpiderAttackController : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) <= AttackRange)
         {
+            anim.SetBool("Attacking", true);
             if (AttackDelayCounter >= AttackDelay)
             {
                 FirstPersonCharacterController fpsController = player.GetComponent<FirstPersonCharacterController>();
@@ -33,6 +35,7 @@ public class SpiderAttackController : MonoBehaviour
         }
         else
         {
+            anim.SetBool("Attacking", false);
             AttackDelayCounter = 0;
         }
     }
