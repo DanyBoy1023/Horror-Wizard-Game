@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+    path: Assets/Menus/Main Menu.unity
+    guid: ea9e7774b3014c345849b8a99a4041a0
+  - enabled: 1
+    path: Assets/White Box Test Scene.unity
+    guid: 711843753ced87e4ea2f28c772c2e912
+  - enabled: 1
+    path: Assets/Menus/Win Menu.unity
+    guid: f1a3c1dd12a0e4a4ba79bc852e9a928d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
   m_UseUCBPForAssetBundles: 0
