@@ -40,12 +40,12 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7474579027421546827}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.8861692
-  m_Range: 10
+  m_Intensity: 12.027854
+  m_Range: 12
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
@@ -87,7 +87,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 1630
+  m_ColorTemperature: 1786
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 5.37e-43, y: 0, z: 8.152544, w: 1}
   m_UseBoundingSphereOverride: 0
@@ -332,7 +332,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TorchLightUpScript
   torch_light: {fileID: 8505939833622619437}
-  on: 0
 --- !u!135 &6055428715371377574
 SphereCollider:
   m_ObjectHideFlags: 0
