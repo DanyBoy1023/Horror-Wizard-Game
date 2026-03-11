@@ -11,12 +11,14 @@ public class EyeballMonsterAttack : MonoBehaviour
     private float ShotCounter = 0;
     private GameObject player;
     private BasicEnemyMovementController Controller;
+    private Animator anim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Controller = GetComponent<BasicEnemyMovementController>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class EyeballMonsterAttack : MonoBehaviour
         {
             if (ShotCounter >= ShotDelay)
             {
-                Shoot();
+                anim.SetBool("Shooting", true);
                 ShotCounter = 0;
             }
             else
@@ -39,6 +41,7 @@ public class EyeballMonsterAttack : MonoBehaviour
 
     public void Shoot()
     {
+        anim.SetBool("Shooting", false);
         GameObject bullet = Instantiate(BulletPrefab);
 
         bullet.transform.position = ShootingPoint.position;

@@ -8,7 +8,6 @@ public class EyeballMonsterBulletController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit Player");
             FirstPersonCharacterController player = collision.gameObject.GetComponent<FirstPersonCharacterController>();
             player.damage(Damage);
         }
