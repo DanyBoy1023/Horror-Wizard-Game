@@ -232,9 +232,9 @@ TextureImporter:
       name: spider-animation_6
       rect:
         serializedVersion: 2
-        x: 1650
+        x: 1670
         y: 0
-        width: 275
+        width: 255
         height: 261
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
