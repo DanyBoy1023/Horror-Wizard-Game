@@ -11,7 +11,10 @@ public class PrisonBarHitTrigger : HitTrigger
     private void Start()
     {
         UpdateHealthBar();
-        hp = MaxHp;
+        if (hp == 0)
+        {
+            hp = MaxHp;
+        }
     }
 
     private void Update()

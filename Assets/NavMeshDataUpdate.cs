@@ -9,6 +9,7 @@ public class NavMeshDataUpdate : MonoBehaviour
     void Start()
     {
         navData = GetComponent<NavMeshSurface>();
+        navData.UpdateNavMesh(navData.navMeshData);
     }
 
     // Update is called once per frame
