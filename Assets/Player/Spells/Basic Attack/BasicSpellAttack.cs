@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static FirstPersonCharacterController;
 
 public class BasicSpellAttack : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class BasicSpellAttack : MonoBehaviour
     private float delayCounter = 0;
     private PlayerSpellController spellController;
     public float BulletSpeed = 5;
+    public FirstPersonCharacterController fpscontroller;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,11 +19,16 @@ public class BasicSpellAttack : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         BasicAttack = playerInput.actions.FindAction("Attack");
         spellController = GetComponent<PlayerSpellController>();
+        fpscontroller = GetComponent<FirstPersonCharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (fpscontroller.getCurrentState() == states.dead || fpscontroller.getCurrentState() == states.locked)
+        {
+            return;
+        }
         float delta = Time.deltaTime;
         bool attacking = BasicAttack.ReadValue<float>() == 1f;
         

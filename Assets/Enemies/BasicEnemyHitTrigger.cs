@@ -6,6 +6,7 @@ public class BasicEnemyHitTrigger : HitTrigger
     public float MaxHp = 10;
     public float hp;
     public Slider hpSlider;
+    public GameObject DeathAnimationPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,11 +39,14 @@ public class BasicEnemyHitTrigger : HitTrigger
         }
         UpdateHealthBar();
         GetComponent<BasicEnemyMovementController>().State = BasicEnemyMovementController.EnemyStates.Chasing;
-
     }
 
     public void Die()
     {
+        GameObject DeathAnimationObject = Instantiate(DeathAnimationPrefab);
+        //DeathAnimationObject.transform.parent = transform.parent;
+        DeathAnimationObject.transform.position = transform.position;
+        DeathAnimationObject.transform.rotation = transform.rotation;
         Destroy(gameObject);
     }
 

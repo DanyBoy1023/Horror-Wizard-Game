@@ -12,7 +12,8 @@ public class FirstPersonCharacterController : MonoBehaviour
         free,
         sprinting,
         crouching,
-        dead
+        dead,
+        locked
     }
     public Stack<states> PlayerStateStack = new Stack<states>();
     
@@ -132,7 +133,7 @@ public class FirstPersonCharacterController : MonoBehaviour
 
     private void Update()
     {
-        if (getCurrentState() == states.dead)
+        if (getCurrentState() == states.dead || getCurrentState() == states.locked)
         {
             return;
         }
@@ -248,7 +249,7 @@ public class FirstPersonCharacterController : MonoBehaviour
 
     public void OnLook(InputValue value)
     {
-        if (getCurrentState() == states.dead)
+        if (getCurrentState() == states.dead || getCurrentState() == states.locked)
         {
             return;
         }

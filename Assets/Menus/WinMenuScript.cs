@@ -1,9 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class MainMenuScript : MonoBehaviour
+public class WinMenuScript : MonoBehaviour
 {
-    public string scene;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,10 +12,5 @@ public class MainMenuScript : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void PlayButton()
-    {
-        SceneManager.LoadScene(scene);
     }
 }

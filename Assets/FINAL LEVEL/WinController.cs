@@ -1,24 +1,29 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinController : MonoBehaviour
 {
     public float ShakeDuration = 10;
     public float ShakeStrength = 5;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private bool ScreenShaking = false;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (ScreenShaking)
+        {
+            CameraShake.ScreenShake(ShakeDuration, ShakeStrength, 0);
+        }
     }
 
     public void FinalScreenShake()
     {
-        CameraShake.ScreenShake(ShakeDuration, ShakeStrength, 0);
+        ScreenShaking = true;
+    }
+
+    public void WinScreen()
+    {
+        SceneManager.LoadScene("Win Menu");
     }
 }

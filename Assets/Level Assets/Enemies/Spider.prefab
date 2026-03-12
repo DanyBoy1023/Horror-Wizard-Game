@@ -231,6 +231,7 @@ MonoBehaviour:
   MaxHp: 10
   hp: 0
   hpSlider: {fileID: 7056016397631633995}
+  DeathAnimationPrefab: {fileID: 6424615610190536260, guid: 3e44a6c80f67df84bb4dcdd2219cff0d, type: 3}
 --- !u!114 &1382252066405535837
 MonoBehaviour:
   m_ObjectHideFlags: 0
