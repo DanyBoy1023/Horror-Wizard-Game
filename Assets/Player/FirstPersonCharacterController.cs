@@ -74,14 +74,28 @@ public class FirstPersonCharacterController : MonoBehaviour
     private void Start()
     {
         hp = maxHp;
-        PlayerStateStack.Push(states.free);
+        PlayerStateStack.Push(states.locked);
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
         playerInput = GetComponent<PlayerInput>();
         move = playerInput.actions.FindAction("Move");
         sprint = playerInput.actions.FindAction("Sprint");
 
         PlayerCamera.transform.rotation = new Quaternion(0,0,0,0);
+    }
+
+    public GameObject TutorialPage;
+    public void unlock()
+    {
+        while (PlayerStateStack.Count > 0)
+        {
+            PlayerStateStack.Pop();
+        }
+        PlayerStateStack.Push(states.free);
+        Cursor.lockState = CursorLockMode.Locked;
+        if (TutorialPage != null)
+        {
+            Destroy(TutorialPage);
+        }
     }
 
     public void damage(float value, bool poison = false)
