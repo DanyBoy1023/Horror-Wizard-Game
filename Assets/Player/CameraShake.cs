@@ -59,4 +59,12 @@ public class CameraShake : MonoBehaviour
         shakeAmount = _shakeAmount;
         shakeDiminish = _shakeDiminish;
     }
+
+
+    public static void ScreenShake(float _shakeDuration, float _shakeAmount, float _shakeDiminish)
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        FirstPersonCharacterController fpsController = player.GetComponent<FirstPersonCharacterController>();
+        fpsController.PlayerCamera.gameObject.GetComponent<CameraShake>().shakecamera(_shakeDuration, _shakeAmount, _shakeDiminish);
+    }
 }

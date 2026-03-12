@@ -32,6 +32,6 @@ public class FireballProjectile : MonoBehaviour
         Destroy(gameObject);
         GameObject player = GameObject.FindWithTag("Player");
         FirstPersonCharacterController fpsController = player.GetComponent<FirstPersonCharacterController>();
-        fpsController.PlayerCamera.gameObject.GetComponent<CameraShake>().shakecamera(screenshakeDuration, screenshakeAmount, screenshakeDiminish);
+        CameraShake.ScreenShake(screenshakeDuration, screenshakeAmount, screenshakeDiminish);
     }
 }
