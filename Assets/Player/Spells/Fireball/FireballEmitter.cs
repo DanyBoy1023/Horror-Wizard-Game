@@ -14,6 +14,7 @@ public class FireballEmitter : MonoBehaviour
     public float blastRadius = 10;
     public float BulletSpeed = 5;
     public FirstPersonCharacterController fpscontroller;
+    public AudioSource FireballCast;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,6 +59,8 @@ public class FireballEmitter : MonoBehaviour
     public LayerMask layerMask;
     private void shoot()
     {
+        FireballCast.time = .5f;
+        FireballCast.Play();
         GameObject bullet = Instantiate(BulletPrefab);
         GameObject leftHand = spellController.LeftHand;
 

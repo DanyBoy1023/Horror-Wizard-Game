@@ -271,7 +271,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.16613, y: 1.115, z: 0.463}
-  m_LocalScale: {x: 2.89, y: 2.89, z: 2.89}
+  m_LocalScale: {x: 4.34, y: 4.34, z: 4.34}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9159594430780715627}
@@ -292,6 +292,7 @@ MonoBehaviour:
   Damage: 10
   status: 1
   duration: 0.3
+  ExplosionSoundPrefab: {fileID: 101756391289215145, guid: 20acfd0cf24b7bc489a4c553a7fe0aa2, type: 3}
 --- !u!33 &8226675466951720813
 MeshFilter:
   m_ObjectHideFlags: 0

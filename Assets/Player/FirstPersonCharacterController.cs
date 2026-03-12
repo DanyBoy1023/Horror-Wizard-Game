@@ -67,6 +67,8 @@ public class FirstPersonCharacterController : MonoBehaviour
     public float PoisonTickDuration = 1;
     private float PoisonTickCounter = 0;
 
+    private AudioSource[] audioSources;
+
     public GameObject DeathMenuPrefab;
     
     private void Start()
@@ -84,6 +86,8 @@ public class FirstPersonCharacterController : MonoBehaviour
 
     public void damage(float value, bool poison = false)
     {
+        audioSources = GetComponents<AudioSource>();
+        audioSources[Random.Range(0, audioSources.Length)].Play();
         hp -= value;
         hp = Mathf.Clamp(hp, 0, maxHp);
         if (hp <=0)
