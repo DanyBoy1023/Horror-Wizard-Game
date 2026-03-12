@@ -1,3 +1,4 @@
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,10 @@ public class PrisonBarHitTrigger : HitTrigger
         if (hp <= 0)
         {
             Destroy(gameObject);
+
+            GameObject navData = GameObject.FindGameObjectWithTag("NavData");
+            NavMeshDataUpdate navMeshSurface = navData.GetComponent<NavMeshDataUpdate>();
+            navMeshSurface.UpdateMeshData();
         }
 
         UpdateHealthBar();
