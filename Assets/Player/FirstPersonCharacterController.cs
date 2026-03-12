@@ -53,7 +53,6 @@ public class FirstPersonCharacterController : MonoBehaviour
     [Header("Health")]
     public float maxHp = 100;
     public float hp;
-    public Text GameOverText;
     public float InvicibilityFrames = 10;
     public float InvincibilityCounter = 0;
 
@@ -67,6 +66,8 @@ public class FirstPersonCharacterController : MonoBehaviour
     private float PoisonCounter = 0;
     public float PoisonTickDuration = 1;
     private float PoisonTickCounter = 0;
+
+    public GameObject DeathMenuPrefab;
     
     private void Start()
     {
@@ -88,10 +89,8 @@ public class FirstPersonCharacterController : MonoBehaviour
         if (hp <=0)
         {
             PlayerStateStack.Push(states.dead);
-            if (GameOverText != null)
-            {
-                GameOverText.enabled = true;
-            }
+            GameObject DeathMenuObject = Instantiate(DeathMenuPrefab);
+            DeathMenuObject.transform.SetParent(transform.parent, false);
         }
         if (!poison)
         {
@@ -253,6 +252,7 @@ public class FirstPersonCharacterController : MonoBehaviour
         {
             return;
         }
+
         Vector2 dir = value.Get<Vector2>();
 
         float mouseX = dir.x * LookSensitivityX;
