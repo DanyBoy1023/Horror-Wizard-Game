@@ -72,8 +72,9 @@ public class EyeballMonsterAttack : MonoBehaviour
 
     public void PlaySound()
     {
-        audioSource.pitch = -1;
+        audioSource.pitch = -2f;
         audioSource.timeSamples = audioSource.clip.samples - 1;
+        audioSource.volume = 100f;
         audioSource.Play();
     }
 }
