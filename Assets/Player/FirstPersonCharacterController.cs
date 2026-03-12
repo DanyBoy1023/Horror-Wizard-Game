@@ -1,9 +1,9 @@
+using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using System.Collections.Generic;
-
-using DG.Tweening;
+using static UnityEngine.Rendering.DebugUI;
 
 public class FirstPersonCharacterController : MonoBehaviour
 {
@@ -73,7 +73,7 @@ public class FirstPersonCharacterController : MonoBehaviour
     
     private void Start()
     {
-        hp = maxHp;
+        //hp = maxHp;
         PlayerStateStack.Push(states.locked);
         characterController = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
@@ -116,6 +116,12 @@ public class FirstPersonCharacterController : MonoBehaviour
             HitSequence.Append(DOTween.To(() => HitOverlay.color.a, x => SetImageAlpha(HitOverlay, x), .5f, .1f));
             HitSequence.Append(DOTween.To(() => HitOverlay.color.a, x => SetImageAlpha(HitOverlay, x), 0, .2f));
         }
+    }
+
+    public void heal(float amount)
+    {
+        hp += amount;
+        hp = Mathf.Clamp(hp, 0, maxHp);
     }
 
     public void poison()
